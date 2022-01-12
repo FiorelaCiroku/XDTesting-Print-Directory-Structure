@@ -1,0 +1,27 @@
+# This is an workflow that is able to print the structure of the directory.
+# Trigger: Commit to the ontology module directory. 
+# Input: A file with the name of the conceptual component that is to be tested
+# Output: 1. Reading the file to extract the name 2. The display of the name 3. Creation of a test directory for the conceptual component. 4) A pull request to add the directories to the main branch. 
+
+# The name of the workflow
+name: Print directory structure
+
+# The action is triggered on push
+on: push
+
+jobs:
+  # This workflow contains a job called "print-structure"
+  print-structure:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so the job can access it
+      - uses: actions/checkout@v2
+      
+      - name: Print directory structure
+        run: |
+              echo " alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'" " > printTree.zshrc
+              tree
+      
