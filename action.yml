@@ -1,10 +1,18 @@
 # This is an workflow that is able to print the structure of the directory.
-# Trigger: Commit to the ontology module directory. 
-# Input: A file with the name of the conceptual component that is to be tested
-# Output: 1. Reading the file to extract the name 2. The display of the name 3. Creation of a test directory for the conceptual component. 4) A pull request to add the directories to the main branch. 
+# Trigger: Push event
+# Input: 
+# Output: Printing of the directory structure
 
 # The name of the workflow
 name: Print directory structure
+
+# The decription of the action
+description: This is an action that is able to print the stucture of the directories present in the repository at the moment of execution. 
+
+# Action icon and color
+branding:
+  icon: 'box'  
+  color: 'blue'
 
 # The action is triggered on push
 on: push
