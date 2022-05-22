@@ -8,6 +8,6 @@ Add the following entry to your Github workflow YAML file:
 ```
 steps:
   - name: XDTesting Print Directory Structure
-    uses: FiorelaCiroku/XDTesting-Print-Directory-Structure@v1.0.0
+    uses: FiorelaCiroku/XDTesting-Print-Directory-Structure@v1.0.1
   
 ```
