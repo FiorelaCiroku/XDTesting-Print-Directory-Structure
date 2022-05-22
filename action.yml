@@ -14,22 +14,15 @@ branding:
   icon: 'box'  
   color: 'blue'
 
-# The action is triggered on push
-on: push
-
-jobs:
-  # This workflow contains a job called "print-structure"
-  print-structure:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
+runs:
+  using: "composite"
     # Steps that will be executed as part of the job
-    steps:
+  steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so the job can access it
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
       
-      - name: Print directory structure
-        run: |
-              echo " alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'" " > printTree.zshrc
-              tree
+    - name: Print directory structure
+      run: |
+          echo " alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'" " > printTree.zshrc
+          tree
       
