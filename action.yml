@@ -22,6 +22,7 @@ runs:
     - uses: actions/checkout@v2
       
     - name: Print directory structure
+      shell: bash
       run: |
           echo " alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'" " > printTree.zshrc
           tree
